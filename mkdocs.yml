@@ -1,0 +1,23 @@
+site_name: Syslog Events Documentation
+site_url: https:127.0.0.1  # 部署后换成你的域名
+
+theme:
+  name: material
+  language: zh
+  palette:
+    - scheme: default
+      primary: blue
+      accent: light blue
+
+nav:
+  - 首页: index.md
+  - Syslog 事件:
+      - 总览: syslog-events.md
+      - 认证事件: events/authentication.md
+      - 授权事件: events/authorization.md
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
