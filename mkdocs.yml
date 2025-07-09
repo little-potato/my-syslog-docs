@@ -1,5 +1,5 @@
 site_name: Syslog Events Documentation
-site_url: https:127.0.0.1  # 部署后换成你的域名
+site_url: https://my-syslog-docs.readthedocs.io  # 部署后换成你的域名
 
 theme:
   name: material
