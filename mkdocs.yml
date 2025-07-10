@@ -12,6 +12,7 @@ theme:
       accent: light blue
   features:
     - navigation.tabs
+    - navigation.sections
     - navigation.instant
     - navigation.expand
     - toc.integrate
