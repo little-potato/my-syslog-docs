@@ -23,7 +23,7 @@ nav:
           - Auth: events/Auth.md
           - Management: events/Management.md
           - Log: events/Log.md
-          - Else: Syslog events and fields.md
+          - Else: events/Syslog events and fields.md
 
 markdown_extensions:
   - admonition
