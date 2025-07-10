@@ -13,7 +13,6 @@ theme:
   features:
     - navigation.instant
     - navigation.expand
-    - navigation.sections
     - content.code.annotate
 
 nav:
