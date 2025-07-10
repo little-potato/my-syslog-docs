@@ -12,10 +12,8 @@ theme:
       accent: light blue
   features:
     - navigation.tabs
-    - navigation.sections
     - toc.integrate
     - content.code.annotate
-    - content.action.edit
 
 nav:
   - 首页: index.md
