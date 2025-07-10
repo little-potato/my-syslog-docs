@@ -16,11 +16,16 @@ theme:
     - content.code.annotate
 
 nav:
-  - 首页: index.md
-  - Syslog 事件:
+  - Syslog:
       - Overview: syslog-events.md
       - Syslog Format: events/syslog-format.md
-      - Events and Fields: events/Syslog events and fields.md
+      - Events and Fields:
+          - Auth: events/Syslog events and fields.md
+          - Management: events/Syslog events and fields.md
+          - Settings: events/Syslog events and fields.md
+          - Endpoints: events/Syslog events and fields.md
+          - Service Desk: events/Syslog events and fields.md
+          - Log: events/Syslog events and fields.md
 
 markdown_extensions:
   - admonition
