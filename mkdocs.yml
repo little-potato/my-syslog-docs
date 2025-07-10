@@ -20,12 +20,10 @@ nav:
       - Overview: syslog-events.md
       - Syslog Format: events/syslog-format.md
       - Events and Fields:
-          - d1Auth: events/Syslog events and fields.md
-          - d2Management: events/Syslog events and fields.md
-          - d3Settings: events/Syslog events and fields.md
-          - d4Endpoints: events/Syslog events and fields.md
-          - d5Service Desk: events/Syslog events and fields.md
-          - d6Log: events/Syslog events and fields.md
+          - Auth: events/Auth.md
+          - Management: events/Management.md
+          - Log: events/Log.md
+          - Else: Syslog events and fields.md
 
 markdown_extensions:
   - admonition
