@@ -1,6 +1,6 @@
 # syslog-format
 
-4. Syslog Settings
+### 1. Syslog Settings
 
 | **Name** | Syslog host name in Splashtop Gateway. |
 | --- | --- |
