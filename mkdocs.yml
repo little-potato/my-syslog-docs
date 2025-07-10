@@ -20,7 +20,6 @@ nav:
       - Overview: syslog-events.md
       - Syslog Format: events/syslog-format.md
       - Events and Fields:
-          - Auth: events/Syslog events and fields.md
           - Management: events/Syslog events and fields.md
           - Settings: events/Syslog events and fields.md
           - Endpoints: events/Syslog events and fields.md
