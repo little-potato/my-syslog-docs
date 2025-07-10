@@ -4,7 +4,7 @@ site_url: https://my-syslog-docs.readthedocs.io  # 部署后换成你的域名
 theme:
   name: material
   language: en
-  logo: assets/Splashtop=Logo_main 1.png
+  logo: assets/Logo_main1.png
   favicon: assets/favicon.ico
   palette:
     - scheme: default
