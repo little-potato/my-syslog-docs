@@ -21,9 +21,9 @@ theme:
 nav:
   - 首页: index.md
   - Syslog 事件:
-      - 总览: syslog-events.md
-      - 认证事件: events/authentication.md
-      - 授权事件: events/authorization.md
+      - Overview: syslog-events.md
+      - Syslog Format: events/syslog-format.md
+      - Events and Fields: events/Syslog events and fields.md
 
 markdown_extensions:
   - admonition
