@@ -1,4 +1,4 @@
-site_name: Syslog Events Documentation
+site_name: Splashtop Syslog Guide
 site_url: https://my-syslog-docs.readthedocs.io  # 部署后换成你的域名
 
 theme:
