@@ -37,3 +37,5 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/little-potato/my-syslog-docs
+extra_css:
+  - css/custom.css
