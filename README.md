@@ -1,7 +1,7 @@
 ```markdown
 # Syslog Events Documentation
 
-这是一个使用 MkDocs + Material 主题构建的 Syslog 事件与参数解释手册示例。
+这是一个使用 MkDocs + Material 主题构建的 Syslog 事件与参数解释手册示例。提交
 
 ## 本地运行
 
