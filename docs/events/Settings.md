@@ -1,8 +1,8 @@
 # Settings.md
 
-## Public Fields
+## **Public Fields**
 
-| Field | Value | **Explanation** |
+| **Field** | **Value** | **Explanation** |
 | --- | --- | --- |
 | timestamp | ISO 8601 timestamp format | The date and time the event has been triggered. |
 | team_id | Integer | Splashtop Team ID. |
@@ -23,18 +23,18 @@
 | target_account | String | The target user account in the event. |
 | result | String | Success or failure of the event. |
 
-## AD Server
+## **AD Server**
 
-### **Events**
+### Events
 
-| **Event** | Description |
+| **Event** | **Description** |
 | --- | --- |
 | adserver_added | A new AD server has been added and saved. |
 | adserver_ldap_updated | The LDAP address of an AD server has been updated. |
 | adserver_name_updated | The name of an AD server has been updated. |
 | adserver_removed | An existing AD server has been deleted. |
 
-### **Fields**
+### Fields
 
 | **Field** | **Value** | **Explanation** |
 | --- | --- | --- |
@@ -42,11 +42,11 @@
 | ldap_addr | String | The added/updated LDAP address of the AD server. |
 | name | String | The updated name of the AD server. |
 
-## SMTP Server
+## **SMTP Server**
 
-### **Events**
+### Events
 
-| **Event** | Description |
+| **Event** | **Description** |
 | --- | --- |
 | smtp_server_added | A new SMTP server has been added and saved. |
 | smtp_server_disabled | An SMTP server has been disabled. |
@@ -55,7 +55,7 @@
 | smtp_server_updated | An existing SMTP server has been modified and saved. |
 | gateway_url_updated | The Splashtop Gateway URL has been modified and saved. |
 
-### **Fields**
+### Fields
 
 | **Field** | **Value** | **Explanation** |
 | --- | --- | --- |
@@ -67,11 +67,11 @@
 | new_addr | String | The updated SMTP server address. |
 | new_email | String | The updated sender Email address. |
 
-## Unattended Access
+## **Unattended Access**
 
-### **Events**
+### Events
 
-| **Event** | Description |
+| **Event** | **Description** |
 | --- | --- |
 | team_grant_granular_file_transfer_download_updated | The admin-configurable value of the file transfer (download) has been updated for the team. |
 | team_grant_granular_file_transfer_upload_updated | The admin-configurable value of the file transfer (upload) has been updated for the team. |
@@ -167,7 +167,7 @@
 | team_sos_service_desk_system_tool_enabled |  |
 | team_sos_service_desk_system_tool_disabled |  |
 
-### **Fields**
+### Fields
 
 | **Field** | **Value** | **Explanation** |
 | --- | --- | --- |
@@ -208,11 +208,11 @@
 | exec_at | String | The daily time of running the offline computer policy. |
 | session_indicator_type | **Both** or **Pop-up** or **Banner** or **None** | The indicator type for remote session or background actions. |
 
-## User Settings
+## **User Settings**
 
-### **Events**
+### Events
 
-| **Event** | Description |
+| **Event** | **Description** |
 | --- | --- |
 | team_group_manager_disabled | Group manager role has been disabled at the team level. |
 | team_group_manager_enabled | Group manager role has been enabled at the team level. |
@@ -229,7 +229,7 @@
 | team_remote_reboot_action_updated | The settings of allowing member roles to reboot computers and Streamers have been updated. |
 | team_member_permission_for_computer_notes_updated | The settings of member’s permission for computer notes have been updated. |
 
-### **Fields**
+### Fields
 
 | **Field** | **Value** | **Explanation** |
 | --- | --- | --- |
