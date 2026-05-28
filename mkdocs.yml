@@ -16,15 +16,13 @@ theme:
     - content.code.annotate
 
 nav:
-  - Syslog:
-      - Overview: syslog-events.md
-      - Syslog Format: events/syslog-format.md
-      - Events and Fields:
-          - Auth: events/Auth.md
-          - Management: events/Management.md
-          - Settings: events/Settings.md
-          - Log: events/Log.md
-          - Else: events/Syslog events and fields.md
+  - Syslog Format: events/syslog-format.md
+  - Events and Fields:
+      - Auth: events/Auth.md
+      - Management: events/Management.md
+      - Settings: events/Settings.md
+      - Log: events/Log.md
+      - Else: events/Syslog events and fields.md
 
 markdown_extensions:
   - admonition
