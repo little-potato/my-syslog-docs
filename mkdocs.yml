@@ -22,7 +22,7 @@ nav:
       - Events and Fields:
           - Auth: events/Auth.md
           - Management: events/Management.md
-          - Settings: events/settings.md
+          - Settings: events/Settings.md
           - Log: events/Log.md
           - Else: events/Syslog events and fields.md
 
