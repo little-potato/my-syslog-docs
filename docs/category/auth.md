@@ -1,114 +1,62 @@
-# Syslog - Auth
+# **Auth**
 
-## **Account**
+## **Public Fields**
 
-### **Events and triggers**
+| Field | Value | **Explanation** |
+| --- | --- | --- |
+| timestamp | ISO 8601 timestamp format | The date and time the event has been triggered. |
+| team_id | Integer | Splashtop Team ID. |
+| category | String | Splashtop events category. |
+| kind | String | Splashtop events kind under specific category. |
+| action | **login** or **logout** | The event operating action type in the event. |
+| account | String | The user account that initiated the specific event. |
+| source_agent | **browser** or **client** or **streamer** or **openapi** or **scim** or **system** | The origin client of the specific event. |
+| source_address | String | IPv4 format. The origin IP address in the specific event. |
+| source_version | String | The origin client version in the specific event. |
+| source_os | String | The origin operating system in the the event. |
+| source_name | String | The origin client name in the specific event. |
+| target_agent | **browser** or **client** or **streamer** | The target device type in the event. |
+| target_address | String | IPv4 format. The target IP address in the event. |
+| target_version | String | The target agent version in the event. |
+| target_os | String | The target agent platform in the event |
+| target_name | String | The target device name in the event. |
+| target_account | String | The target user account in the event. |
+| result | String | Success or failure of the event. |
+
+## **User**
+
+### Events and triggers
 
 | **Event** | **Trigger** |
 | --- | --- |
-| account_added | A new account has been added and saved. |
-| account_changed | An existing account has been modified and saved. |
-| account_removed | An existing account has been deleted. |
+| login | A user has attempted to log in to the Splashtop Gateway from the Business app or the web console. The result is **success** when the login has been completed, or **failure** when the login has been rejected; the reason of a failed login is recorded in the extra_result field. |
+| logout | A user has logged out from the web console. |
 
-### **Fields**
+### Fields
 
 | **Field** | **Value** | **Explanation** |
 | --- | --- | --- |
-| name | string | The name of the account. |
-| username | string | The username of the account |
-| password | *** | Indicates if the password has changed. The actual string is never supplied. |
-| auto_rotate_credentials | **1** or **0** | **1:** Enables the automatic rotation for this account.**0:** Disables the automatic rotation for this account. |
-| allow_simultaneous_checkout | **1** or **0** | **1:** Account can be checked out and used by multiple users or sessions at the same time.**0:** Account can be checked out and used by single user at the same time. |
-| personal | **1** or **0** | **1:** Is a personal account.**0:** Is a shared account. |
-| group | string | The unique identifier of the account group. |
+| target | String | The user account that attempted to log in or log out. |
+| method1 | **ad** or **local** or **sso** | The primary authentication method of the login: an AD account, a local account, or an SSO account. |
+| method2 | **2fa_passcode** or **2fa_recovery_code** | The secondary authentication method of the login when two-factor authentication is in use: a 2FA passcode or a 2FA recovery code. This field is present only when the login has reached the 2FA step. |
+| extra_result | String | The reason of a failed login. See the table below. This field is present only when the result is **failure**. |
 
-## **Account group**
+### extra_result values
 
-### **Events and triggers**
-
-| **Event** | **Trigger** |
+| **Value** | **Explanation** |
 | --- | --- |
-| account_group_added | A new account group has been added and saved. |
-| account_group_changed | An existing account group has been modified and saved. |
-| account_group_removed | An existing account group has been deleted. |
-
-### **Fields**
-
-| **Field** | **Value** | **Explanation** |
-| --- | --- | --- |
-| id | string | The unique identifier of the account group. |
-| name | string | The name of the account group. |
-| description | string | The description of the account group. |
-
-## **Account Jump Item association**
-
-### **Events and triggers**
-
-| **Event** | **Trigger** |
-| --- | --- |
-| account_jump_item_association_added | An association with a Jump Item was added for the account. |
-| account_jump_item_association_changed | An association with a Jump Item was changed for the account. |
-| account_jump_item_direct_association_added | The account is allowed to be injected for the specific Jump Items. |
-| account_jump_item_direct_association_removed | The account is removed from the allowed list to be injected for the specific Jump Items. |
-
-### **Fields**
-
-| **Field** | **Value** | **Explanation** |
-| --- | --- | --- |
-| id | number | The unique identifier of the association. |
-| account_group_id | number | The unique identifier of the account group. |
-| account_id | number | The unique identifier of the account. |
-| criteria | string | A JSON representation of the filters, e.g., **{"name":["name"],"host":["hostname"],"tag":["tag"],"comment":["comments"],"shared_jump_groups":[3]}** Valid only when the filter type is **criteria**. |
-| filter_type | **applicablenot_injectablecriteria** | The filter type of the association. |
-
-## **Accounts changed**
-
-### **Events and triggers**
-
-| **Event** | **Trigger** |
-| --- | --- |
-| accounts_changed | A group of one or more accounts was modified. |
-
-### **Fields**
-
-| **Field** | **Value** | **Explanation** |
-| --- | --- | --- |
-| accounts_id | comma-delimited list | The unique identifier of the vault accounts. |
-| new_group | string | The unique identifier of the target account group. |
-
-## **Admin password reset to factory default**
-
-### **Events and triggers**
-
-| **Event** | **Trigger** |
-| --- | --- |
-| admin_password_reset_to_factory_default | The **Reset Admin Account** button has been clicked, reverting a site’s administrative account to its default credentials. |
-
-## **API account**
-
-### **Events and triggers**
-
-| **Event** | **Trigger** |
-| --- | --- |
-| api_account_added | A new API account has been added and saved. |
-| api_account_changed | An existing API account has been modified and saved. |
-| api_account_removed | An existing API account has been deleted. |
-
-### **Fields**
-
-| **Field** | **Value** | **Explanation** |
-| --- | --- | --- |
-| client_id | string | The OAuth client ID. |
-| client_secret | *** | Indicates the OAuth client secret. The actual string is never supplied. |
-| comments | string | Any comments associated with this API account. |
-| enabled | **1** or **0** | **1:** This API account is enabled.**0:** This API account is disabled. |
-| id | string | The unique identifier of the API account. |
-| ip_addresses | comma-delimited list | The list of network address prefixes from which this account can authenticate. |
-| name | string | The name of the API account. |
-| permissions:backup | **1** or **0** | **1:** This API account may use the backup API.**0:** This API account may not use the backup API. |
-| permissions:command | **denyread_onlyfull_access** | Whether this API account is disallowed to use the command API, has read-only access to the command API, or has full access to the command API. |
-| permissions:reporting:archive | **1** or **0** | **1:** This API account may use the archive API.**0:** This API account may not use the archive API. |
-| permissions:reporting:license | **1** or **0** | **1:** This API account may use the license reporting API.**0:** This API account may not use the license reporting API. |
-| permissions:reporting:presentation | **1** or **0** | **1:** This API account may use the presentation reporting API.**0:** This API account may not use the presentation reporting API. |
-| permissions:reporting:support | **1** or **0** | **1:** This API account may use the support reporting API.**0:** This API account may not use the support reporting API. |
-| permissions:reporting:syslog | **denyread_onlyfull_access** | Whether this API account is disallowed access syslog reports, has read-only access to syslog reports, or has full access to syslog reports. |
+| account_disabled | The user account has been disabled. |
+| account_lockout | The user account has been locked out due to too many failed login attempts. |
+| pwd_incorrect | The password is incorrect. |
+| need_resetpwd | The user is required to reset the password before logging in. |
+| need_rotate_password | The password has expired and the user is required to change the password. |
+| violate_policy_need_reset | The password does not meet the current password policy and the user is required to reset it. |
+| need_2fa | The login requires two-factor authentication and the 2FA code has not been provided yet. |
+| 2fa_code_incorrect | The 2FA passcode is incorrect. |
+| 2fa_recovery_code_incorrect | The 2FA recovery code is incorrect. |
+| need_device_auth | The login from the Business app requires device authentication and the device has not been authenticated yet. |
+| need_browser_auth | The login from the web console requires browser authentication and the browser has not been authenticated yet. |
+| web_access_disabled | The user account is not allowed to access the web console. |
+| mac_address_restriction | The login has been rejected by the MAC address restriction. |
+| out_of_seat | The login has been rejected because the team has no available license seat for the AD account. |
+| user_count_limit_exceeded | The login has been rejected because the number of users in the team has reached the user count limit for the AD account. |
