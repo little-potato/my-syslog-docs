@@ -66,8 +66,8 @@
 | trust_device_removed | A device has been removed from the trusted device list of a user. |
 | admin_granted | A user has been granted the admin role. |
 | member_granted | A user has been granted the member role. |
-| group_manager_granted | A user has been granted the group manager role of a group. |
-| group_manager_withdrawal | The group manager role of a group has been withdrawn from a user. |
+| managed_group_added | A user has been granted the group manager role of a group. |
+| managed_group_removed | The group manager role of a group has been withdrawn from a user. |
 | user_group_assigned | A user has been moved to another group. |
 | access_permission_updated | The access permission of a user has been updated. |
 | access_permission_updated_csv | The access permission of a user has been updated by importing a CSV file. |
@@ -326,7 +326,7 @@
 | **Field** | **Value** | **Explanation** |
 | --- | --- | --- |
 | target | String | The name of the target 1-to-Many action. |
-| type | String | The type of the 1-to-Many action. |
+| action_kind | String | The action kind of the 1-to-Many action. |
 
 ## **1-to-Many Schedule**
 
@@ -337,15 +337,15 @@
 | 1_to_many_schedule_added | A new 1-to-Many schedule has been added. |
 | 1_to_many_schedule_updated | An existing 1-to-Many schedule has been modified and saved. |
 | 1_to_many_schedule_removed | An existing 1-to-Many schedule has been deleted. |
-| 1tomany_streamer_associated | A computer has been added to a 1-to-Many schedule. |
-| 1tomany_streamer_disassociated | A computer has been removed from a 1-to-Many schedule. |
+| 1_to_many_streamer_associated | A computer has been added to a 1-to-Many schedule. |
+| 1_to_many_streamer_disassociated | A computer has been removed from a 1-to-Many schedule. |
 
 ### Fields
 
 | **Field** | **Value** | **Explanation** |
 | --- | --- | --- |
 | target | String | The name of the target 1-to-Many schedule. |
-| type | String | The type of the 1-to-Many schedule. |
+| action_kind | String | The action kind of the 1-to-Many schedule. |
 | streamer | String | The name of the computer that has been associated with or disassociated from the schedule. |
 
 ## **Deployment**
