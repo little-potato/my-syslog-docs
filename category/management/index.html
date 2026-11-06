@@ -1,0 +1,2895 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../endpoint/">
+      
+      
+        <link rel="next" href="../service_desk/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/shuidi.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Management - Splashtop Syslog Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#management" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Splashtop Syslog Guide" class="md-header__button md-logo" aria-label="Splashtop Syslog Guide" data-md-component="logo">
+      
+  <img src="../../assets/Logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Splashtop Syslog Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Management
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Splashtop Syslog Guide" class="md-nav__button md-logo" aria-label="Splashtop Syslog Guide" data-md-component="logo">
+      
+  <img src="../../assets/Logo.png" alt="logo">
+
+    </a>
+    Splashtop Syslog Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Events and Fields
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Events and Fields
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../auth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Auth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../session/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endpoint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Endpoint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Management
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#public-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public Fields
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#events-and-triggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events and triggers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extra_result-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        extra_result values
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Group
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Group">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#events-and-triggers_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events and triggers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fields_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extra_result-values_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        extra_result values
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resource">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#events-and-triggers_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events and triggers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fields_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Policy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Policy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#events-and-triggers_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events and triggers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fields_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-to-many-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-to-Many Action
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-to-Many Action">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#events-and-triggers_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events and triggers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fields_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-to-many-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-to-Many Schedule
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-to-Many Schedule">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#events-and-triggers_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events and triggers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fields_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#events-and-triggers_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events and triggers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fields_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rmm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RMM
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RMM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#events-and-triggers_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events and triggers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fields_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oauth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OAuth
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OAuth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#events-and-triggers_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events and triggers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fields_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../service_desk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Desk
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#public-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public Fields
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#events-and-triggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events and triggers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extra_result-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        extra_result values
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Group
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Group">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#events-and-triggers_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events and triggers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fields_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extra_result-values_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        extra_result values
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resource">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#events-and-triggers_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events and triggers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fields_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Policy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Policy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#events-and-triggers_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events and triggers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fields_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-to-many-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-to-Many Action
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-to-Many Action">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#events-and-triggers_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events and triggers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fields_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-to-many-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-to-Many Schedule
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-to-Many Schedule">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#events-and-triggers_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events and triggers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fields_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#events-and-triggers_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events and triggers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fields_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rmm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RMM
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RMM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#events-and-triggers_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events and triggers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fields_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oauth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OAuth
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OAuth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#events-and-triggers_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events and triggers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fields_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="management"><strong>Management</strong><a class="headerlink" href="#management" title="Permanent link">&para;</a></h1>
+<h2 id="public-fields"><strong>Public Fields</strong><a class="headerlink" href="#public-fields" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+<th><strong>Explanation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>timestamp</td>
+<td>ISO 8601 timestamp format</td>
+<td>The date and time the event has been triggered.</td>
+</tr>
+<tr>
+<td>team_id</td>
+<td>Integer</td>
+<td>Splashtop Team ID.</td>
+</tr>
+<tr>
+<td>category</td>
+<td>String</td>
+<td>Splashtop events category.</td>
+</tr>
+<tr>
+<td>kind</td>
+<td>String</td>
+<td>Splashtop events kind under specific category.</td>
+</tr>
+<tr>
+<td>action</td>
+<td><strong>add</strong> or <strong>update</strong> or <strong>delete</strong></td>
+<td>The event operating action type in the event.</td>
+</tr>
+<tr>
+<td>account</td>
+<td>String</td>
+<td>The user account that initiated the specific event.</td>
+</tr>
+<tr>
+<td>source_agent</td>
+<td><strong>browser</strong> or <strong>client</strong> or <strong>streamer</strong> or <strong>openapi</strong> or <strong>scim</strong> or <strong>system</strong></td>
+<td>The origin client of the specific event.</td>
+</tr>
+<tr>
+<td>source_address</td>
+<td>String</td>
+<td>IPv4 format. The origin IP address in the specific event.</td>
+</tr>
+<tr>
+<td>source_version</td>
+<td>String</td>
+<td>The origin client version in the specific event.</td>
+</tr>
+<tr>
+<td>source_os</td>
+<td>String</td>
+<td>The origin operating system in the the event.</td>
+</tr>
+<tr>
+<td>source_name</td>
+<td>String</td>
+<td>The origin client name in the specific event.</td>
+</tr>
+<tr>
+<td>target_agent</td>
+<td><strong>browser</strong> or <strong>client</strong> or <strong>streamer</strong></td>
+<td>The target device type in the event.</td>
+</tr>
+<tr>
+<td>target_address</td>
+<td>String</td>
+<td>IPv4 format. The target IP address in the event.</td>
+</tr>
+<tr>
+<td>target_version</td>
+<td>String</td>
+<td>The target agent version in the event.</td>
+</tr>
+<tr>
+<td>target_os</td>
+<td>String</td>
+<td>The target agent platform in the event</td>
+</tr>
+<tr>
+<td>target_name</td>
+<td>String</td>
+<td>The target device name in the event.</td>
+</tr>
+<tr>
+<td>target_account</td>
+<td>String</td>
+<td>The target user account in the event.</td>
+</tr>
+<tr>
+<td>result</td>
+<td>String</td>
+<td>Success or failure of the event.</td>
+</tr>
+<tr>
+<td>extra_result</td>
+<td>String</td>
+<td>The reason of a failed event. This field is present only when the result is <strong>failure</strong>. See the extra_result values table under each kind.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="user"><strong>User</strong><a class="headerlink" href="#user" title="Permanent link">&para;</a></h2>
+<h3 id="events-and-triggers">Events and triggers<a class="headerlink" href="#events-and-triggers" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Event</strong></th>
+<th><strong>Trigger</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_added</td>
+<td>A new local user has been added to the team.</td>
+</tr>
+<tr>
+<td>user_added_csv</td>
+<td>A new local user has been added to the team by importing a CSV file.</td>
+</tr>
+<tr>
+<td>user_removed</td>
+<td>An existing local user has been deleted from the team.</td>
+</tr>
+<tr>
+<td>ad_user_added</td>
+<td>A new AD user has been added to the team.</td>
+</tr>
+<tr>
+<td>ad_user_added_csv</td>
+<td>A new AD user has been added to the team by importing a CSV file.</td>
+</tr>
+<tr>
+<td>ad_user_removed</td>
+<td>An existing AD user has been deleted from the team.</td>
+</tr>
+<tr>
+<td>ad_group_added</td>
+<td>A new AD group has been added to the team.</td>
+</tr>
+<tr>
+<td>ad_group_added_csv</td>
+<td>A new AD group has been added to the team by importing a CSV file.</td>
+</tr>
+<tr>
+<td>ad_group_removed</td>
+<td>An existing AD group has been deleted from the team.</td>
+</tr>
+<tr>
+<td>ad_group_member_added</td>
+<td>A member of an AD group has been added to the team.</td>
+</tr>
+<tr>
+<td>ad_group_member_removed</td>
+<td>A member of an AD group has been removed from the team.</td>
+</tr>
+<tr>
+<td>sso_user_added</td>
+<td>A new SSO user has been added to the team.</td>
+</tr>
+<tr>
+<td>sso_user_added_csv</td>
+<td>A new SSO user has been added to the team by importing a CSV file.</td>
+</tr>
+<tr>
+<td>sso_user_removed</td>
+<td>An existing SSO user has been deleted from the team.</td>
+</tr>
+<tr>
+<td>sso_group_added</td>
+<td>A new SSO group has been added to the team via SCIM provisioning.</td>
+</tr>
+<tr>
+<td>sso_group_removed</td>
+<td>An existing SSO group has been deleted from the team.</td>
+</tr>
+<tr>
+<td>sso_group_name_updated</td>
+<td>The name of an SSO group has been updated via SCIM provisioning.</td>
+</tr>
+<tr>
+<td>sso_group_member_assigned</td>
+<td>A user has been assigned to an SSO group via SCIM provisioning.</td>
+</tr>
+<tr>
+<td>sso_group_member_unassigned</td>
+<td>A user has been unassigned from an SSO group via SCIM provisioning.</td>
+</tr>
+<tr>
+<td>sso_group_member_removed</td>
+<td>A member of an SSO group has been removed from the team.</td>
+</tr>
+<tr>
+<td>user_enabled</td>
+<td>A user account has been enabled.</td>
+</tr>
+<tr>
+<td>user_disabled</td>
+<td>A user account has been disabled.</td>
+</tr>
+<tr>
+<td>user_locked</td>
+<td>A user account has been locked.</td>
+</tr>
+<tr>
+<td>user_unlocked</td>
+<td>A user account has been unlocked.</td>
+</tr>
+<tr>
+<td>user_auth_method_updated</td>
+<td>The authentication method of a user has been changed.</td>
+</tr>
+<tr>
+<td>user_email_updated</td>
+<td>The Email address of a user has been updated.</td>
+</tr>
+<tr>
+<td>account_name_updated</td>
+<td>The account name of a user has been updated.</td>
+</tr>
+<tr>
+<td>display_name_updated</td>
+<td>The display name of a user has been updated.</td>
+</tr>
+<tr>
+<td>pwd_updated</td>
+<td>The password of a user has been changed.</td>
+</tr>
+<tr>
+<td>pwd_reset</td>
+<td>The password of a user has been reset by an admin.</td>
+</tr>
+<tr>
+<td>2fa_enabled</td>
+<td>Two-factor authentication has been enabled for a user.</td>
+</tr>
+<tr>
+<td>2fa_disabled</td>
+<td>Two-factor authentication has been disabled for a user.</td>
+</tr>
+<tr>
+<td>trust_device_added</td>
+<td>A device has been added to the trusted device list of a user.</td>
+</tr>
+<tr>
+<td>trust_device_removed</td>
+<td>A device has been removed from the trusted device list of a user.</td>
+</tr>
+<tr>
+<td>admin_granted</td>
+<td>A user has been granted the admin role.</td>
+</tr>
+<tr>
+<td>member_granted</td>
+<td>A user has been granted the member role.</td>
+</tr>
+<tr>
+<td>managed_group_added</td>
+<td>A user has been granted the group manager role of a group.</td>
+</tr>
+<tr>
+<td>managed_group_removed</td>
+<td>The group manager role of a group has been withdrawn from a user.</td>
+</tr>
+<tr>
+<td>user_group_assigned</td>
+<td>A user has been moved to another group.</td>
+</tr>
+<tr>
+<td>access_permission_updated</td>
+<td>The access permission of a user has been updated.</td>
+</tr>
+<tr>
+<td>access_permission_updated_csv</td>
+<td>The access permission of a user has been updated by importing a CSV file.</td>
+</tr>
+<tr>
+<td>user_accessed_group_added</td>
+<td>A computer group has been added to the access list of a user.</td>
+</tr>
+<tr>
+<td>user_accessed_group_added_csv</td>
+<td>A computer group has been added to the access list of a user by importing a CSV file.</td>
+</tr>
+<tr>
+<td>user_accessed_group_removed</td>
+<td>A computer group has been removed from the access list of a user.</td>
+</tr>
+<tr>
+<td>user_accessed_group_removed_csv</td>
+<td>A computer group has been removed from the access list of a user by importing a CSV file.</td>
+</tr>
+<tr>
+<td>user_accessed_streamer_added</td>
+<td>A computer has been added to the access list of a user.</td>
+</tr>
+<tr>
+<td>user_accessed_streamer_added_csv</td>
+<td>A computer has been added to the access list of a user by importing a CSV file.</td>
+</tr>
+<tr>
+<td>user_accessed_streamer_removed</td>
+<td>A computer has been removed from the access list of a user.</td>
+</tr>
+<tr>
+<td>user_accessed_streamer_removed_csv</td>
+<td>A computer has been removed from the access list of a user by importing a CSV file.</td>
+</tr>
+<tr>
+<td>web_access_enabled</td>
+<td>Web console access has been enabled for a user.</td>
+</tr>
+<tr>
+<td>web_access_disabled</td>
+<td>Web console access has been disabled for a user.</td>
+</tr>
+<tr>
+<td>sos_enabled</td>
+<td>SOS (attended access) has been enabled for a user.</td>
+</tr>
+<tr>
+<td>sos_disabled</td>
+<td>SOS (attended access) has been disabled for a user.</td>
+</tr>
+<tr>
+<td>user_granular_remote_control_updated</td>
+<td>The granular control of the remote control for a user has been updated.</td>
+</tr>
+<tr>
+<td>user_granular_file_transfer_download_updated</td>
+<td>The granular control of the file transfer (download) for a user has been updated.</td>
+</tr>
+<tr>
+<td>user_granular_file_transfer_upload_updated</td>
+<td>The granular control of the file transfer (upload) for a user has been updated.</td>
+</tr>
+<tr>
+<td>user_granular_remote_command_updated</td>
+<td>The granular control of the remote command for a user has been updated.</td>
+</tr>
+<tr>
+<td>user_granular_remote_print_updated</td>
+<td>The granular control of the remote print for a user has been updated.</td>
+</tr>
+<tr>
+<td>user_granular_request_permission_updated</td>
+<td>The granular control of the request permission to connect for a user has been updated.</td>
+</tr>
+<tr>
+<td>user_granular_request_permission_rdp_updated</td>
+<td>The granular control of the request permission to connect (RDP session) for a user has been updated.</td>
+</tr>
+<tr>
+<td>user_granular_text_copy_paste_local_remote_updated</td>
+<td>The granular control of the copy and paste (from local to remote) for a user has been updated.</td>
+</tr>
+<tr>
+<td>user_granular_text_copy_paste_remote_local_updated</td>
+<td>The granular control of the copy and paste (from remote to local) for a user has been updated.</td>
+</tr>
+<tr>
+<td>user_granular_watermark_protection_updated</td>
+<td>The granular control of the watermark protection for a user has been updated.</td>
+</tr>
+<tr>
+<td>user_granular_centralized_session_recording_unattended_updated</td>
+<td>The granular control of the centralized session recording (unattended) for a user has been updated.</td>
+</tr>
+<tr>
+<td>user_granular_centralized_session_recording_attended_updated</td>
+<td>The granular control of the centralized session recording (attended) for a user has been updated.</td>
+</tr>
+<tr>
+<td>user_granular_system_tools_updated</td>
+<td>The granular control of the system tools for a user has been updated.</td>
+</tr>
+<tr>
+<td>user_granular_require_2fa_updated</td>
+<td>The granular control of the require 2FA for a user has been updated.</td>
+</tr>
+<tr>
+<td>user_grant_granular_remote_control_updated</td>
+<td>The admin-configurable value of the remote control has been updated for a user (admin role).</td>
+</tr>
+<tr>
+<td>user_grant_granular_file_transfer_download_updated</td>
+<td>The admin-configurable value of the file transfer (download) has been updated for a user (admin role).</td>
+</tr>
+<tr>
+<td>user_grant_granular_file_transfer_upload_updated</td>
+<td>The admin-configurable value of the file transfer (upload) has been updated for a user (admin role).</td>
+</tr>
+<tr>
+<td>user_grant_granular_remote_command_updated</td>
+<td>The admin-configurable value of the remote command has been updated for a user (admin role).</td>
+</tr>
+<tr>
+<td>user_grant_granular_remote_print_updated</td>
+<td>The admin-configurable value of the remote print has been updated for a user (admin role).</td>
+</tr>
+<tr>
+<td>user_grant_granular_request_permission_updated</td>
+<td>The admin-configurable value of the request permission to connect has been updated for a user (admin role).</td>
+</tr>
+<tr>
+<td>user_grant_granular_request_permission_rdp_updated</td>
+<td>The admin-configurable value of the request permission to connect (RDP session) has been updated for a user (admin role).</td>
+</tr>
+<tr>
+<td>user_grant_granular_text_copy_paste_local_remote_updated</td>
+<td>The admin-configurable value of the copy and paste (from local to remote) has been updated for a user (admin role).</td>
+</tr>
+<tr>
+<td>user_grant_granular_text_copy_paste_remote_local_updated</td>
+<td>The admin-configurable value of the copy and paste (from remote to local) has been updated for a user (admin role).</td>
+</tr>
+<tr>
+<td>user_grant_granular_watermark_protection_updated</td>
+<td>The admin-configurable value of the watermark protection has been updated for a user (admin role).</td>
+</tr>
+<tr>
+<td>user_grant_granular_centralized_session_recording_unattended_updated</td>
+<td>The admin-configurable value of the centralized session recording (unattended) has been updated for a user (admin role).</td>
+</tr>
+<tr>
+<td>user_grant_granular_centralized_session_recording_attended_updated</td>
+<td>The admin-configurable value of the centralized session recording (attended) has been updated for a user (admin role).</td>
+</tr>
+<tr>
+<td>user_grant_granular_system_tools_updated</td>
+<td>The admin-configurable value of the system tools has been updated for a user (admin role).</td>
+</tr>
+<tr>
+<td>user_grant_granular_require_2fa_updated</td>
+<td>The admin-configurable value of the require 2FA has been updated for a user (admin role).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fields">Fields<a class="headerlink" href="#fields" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Value</strong></th>
+<th><strong>Explanation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>target</td>
+<td>String</td>
+<td>The target user account.</td>
+</tr>
+<tr>
+<td>ad_server</td>
+<td>String</td>
+<td>The name of the AD server that the AD user or AD group belongs to.</td>
+</tr>
+<tr>
+<td>csv</td>
+<td>String</td>
+<td>The file name of the imported CSV file.</td>
+</tr>
+<tr>
+<td>SSO group</td>
+<td>String</td>
+<td>The name of the SSO group that the user has been assigned to or unassigned from.</td>
+</tr>
+<tr>
+<td>old_name</td>
+<td>String</td>
+<td>The previous name of the SSO group.</td>
+</tr>
+<tr>
+<td>new_name</td>
+<td>String</td>
+<td>The updated name of the SSO group.</td>
+</tr>
+<tr>
+<td>old_method</td>
+<td>String</td>
+<td>The previous authentication method of the user.</td>
+</tr>
+<tr>
+<td>new_method</td>
+<td>String</td>
+<td>The updated authentication method of the user.</td>
+</tr>
+<tr>
+<td>old_email</td>
+<td>String</td>
+<td>The previous Email address of the user.</td>
+</tr>
+<tr>
+<td>new_email</td>
+<td>String</td>
+<td>The updated Email address of the user.</td>
+</tr>
+<tr>
+<td>account_name</td>
+<td>String</td>
+<td>The updated account name of the user.</td>
+</tr>
+<tr>
+<td>display_name</td>
+<td>String</td>
+<td>The updated display name of the user.</td>
+</tr>
+<tr>
+<td>2fa_method</td>
+<td><strong>Authenticator app</strong> or <strong>Email</strong></td>
+<td>The two-factor authentication method that has been enabled for the user.</td>
+</tr>
+<tr>
+<td>device_name</td>
+<td>String</td>
+<td>The name of the device that has been added to or removed from the trusted device list.</td>
+</tr>
+<tr>
+<td>group</td>
+<td>String</td>
+<td>The name of the group: the group that the group manager role has been granted or withdrawn for, or the computer group that has been added to or removed from the access list of the user.</td>
+</tr>
+<tr>
+<td>old_group</td>
+<td>String</td>
+<td>The group that the user belonged to previously.</td>
+</tr>
+<tr>
+<td>new_group</td>
+<td>String</td>
+<td>The group that the user has been moved to.</td>
+</tr>
+<tr>
+<td>access_permission</td>
+<td>String</td>
+<td>The updated access permission of the user.</td>
+</tr>
+<tr>
+<td>streamer</td>
+<td>String</td>
+<td>The name of the computer that has been added to or removed from the access list of the user.</td>
+</tr>
+<tr>
+<td>granular_remote_control</td>
+<td><strong>default</strong> or <strong>follow group</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The updated granular control of the remote control for the user.</td>
+</tr>
+<tr>
+<td>granular_file_transfer_download</td>
+<td><strong>default</strong> or <strong>follow group</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The updated granular control of the file transfer (download) for the user.</td>
+</tr>
+<tr>
+<td>granular_file_transfer_upload</td>
+<td><strong>default</strong> or <strong>follow group</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The updated granular control of the file transfer (upload) for the user.</td>
+</tr>
+<tr>
+<td>granular_remote_command</td>
+<td><strong>default</strong> or <strong>follow group</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The updated granular control of the remote command for the user.</td>
+</tr>
+<tr>
+<td>granular_remote_print</td>
+<td><strong>default</strong> or <strong>follow group</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The updated granular control of the remote print for the user.</td>
+</tr>
+<tr>
+<td>granular_request_permission</td>
+<td><strong>reject connection after request expires (at login screen, reject automatically)</strong> or <strong>reject connection after request expires (at login screen, allow automatically)</strong> or <strong>allow connection after request expires</strong> or <strong>off</strong></td>
+<td>The updated granular control of the request permission to connect for the user.</td>
+</tr>
+<tr>
+<td>granular_request_permission_rdp</td>
+<td><strong>reject connection after request expires (at login screen, reject automatically)</strong> or <strong>reject connection after request expires (at login screen, allow automatically)</strong> or <strong>allow connection after request expires</strong> or <strong>off</strong></td>
+<td>The updated granular control of the request permission to connect (RDP session) for the user.</td>
+</tr>
+<tr>
+<td>granular_text_copy_paste_local_remote</td>
+<td><strong>default</strong> or <strong>follow group</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The updated granular control of the copy and paste (from local to remote) for the user.</td>
+</tr>
+<tr>
+<td>granular_text_copy_paste_remote_local</td>
+<td><strong>default</strong> or <strong>follow group</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The updated granular control of the copy and paste (from remote to local) for the user.</td>
+</tr>
+<tr>
+<td>granular_watermark_protection</td>
+<td><strong>default</strong> or <strong>follow group</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The updated granular control of the watermark protection for the user.</td>
+</tr>
+<tr>
+<td>granular_centralized_session_recording_unattended</td>
+<td><strong>default</strong> or <strong>follow group</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The updated granular control of the centralized session recording (unattended) for the user.</td>
+</tr>
+<tr>
+<td>granular_centralized_session_recording_attended</td>
+<td><strong>default</strong> or <strong>follow group</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The updated granular control of the centralized session recording (attended) for the user.</td>
+</tr>
+<tr>
+<td>granular_system_tools</td>
+<td><strong>default</strong> or <strong>follow_group</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The updated granular control of the system tools for the user.</td>
+</tr>
+<tr>
+<td>granular_require_2fa</td>
+<td><strong>default</strong> or <strong>follow group</strong> or <strong>off</strong> or <strong>on</strong> or <strong>verification with Authenticator app</strong> or <strong>verification with Email</strong></td>
+<td>The updated granular control of the require 2FA for the user.</td>
+</tr>
+<tr>
+<td>grant_granular_remote_control</td>
+<td><strong>default</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The admin has been granted or not granted the permission to configure remote control.</td>
+</tr>
+<tr>
+<td>grant_granular_file_transfer_download</td>
+<td><strong>default</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The admin has been granted or not granted the permission to configure file transfer (download).</td>
+</tr>
+<tr>
+<td>grant_granular_file_transfer_upload</td>
+<td><strong>default</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The admin has been granted or not granted the permission to configure file transfer (upload).</td>
+</tr>
+<tr>
+<td>grant_granular_remote_command</td>
+<td><strong>default</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The admin has been granted or not granted the permission to configure remote command.</td>
+</tr>
+<tr>
+<td>grant_granular_remote_print</td>
+<td><strong>default</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The admin has been granted or not granted the permission to configure remote print.</td>
+</tr>
+<tr>
+<td>grant_granular_request_permission</td>
+<td><strong>default</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The admin has been granted or not granted the permission to configure request permission to connect.</td>
+</tr>
+<tr>
+<td>grant_granular_request_permission_rdp</td>
+<td><strong>default</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The admin has been granted or not granted the permission to configure request permission to connect (RDP session).</td>
+</tr>
+<tr>
+<td>grant_granular_text_copy_paste_local_remote</td>
+<td><strong>default</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The admin has been granted or not granted the permission to configure copy and paste (from local to remote).</td>
+</tr>
+<tr>
+<td>grant_granular_text_copy_paste_remote_local</td>
+<td><strong>default</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The admin has been granted or not granted the permission to configure copy and paste (from remote to local).</td>
+</tr>
+<tr>
+<td>grant_granular_watermark_protection</td>
+<td><strong>default</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The admin has been granted or not granted the permission to configure watermark protection.</td>
+</tr>
+<tr>
+<td>grant_granular_centralized_session_recording_unattended</td>
+<td><strong>default</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The admin has been granted or not granted the permission to configure centralized session recording (unattended).</td>
+</tr>
+<tr>
+<td>grant_granular_centralized_session_recording_attended</td>
+<td><strong>default</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The admin has been granted or not granted the permission to configure centralized session recording (attended).</td>
+</tr>
+<tr>
+<td>grant_granular_system_tools</td>
+<td><strong>default</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The admin has been granted or not granted the permission to configure system tools.</td>
+</tr>
+<tr>
+<td>grant_granular_require_2fa</td>
+<td><strong>default</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The admin has been granted or not granted the permission to configure require 2FA.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="extra_result-values">extra_result values<a class="headerlink" href="#extra_result-values" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Value</strong></th>
+<th><strong>Explanation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_existed</td>
+<td>The user or group already exists in the team.</td>
+</tr>
+<tr>
+<td>out_of_seat</td>
+<td>The team has no available license seat for the user.</td>
+</tr>
+<tr>
+<td>out_of_sos_seat</td>
+<td>The team has no available SOS license seat for the user.</td>
+</tr>
+<tr>
+<td>user_count_limit_exceeded</td>
+<td>The number of users in the team has reached the user count limit.</td>
+</tr>
+<tr>
+<td>group_limits_exceeded</td>
+<td>The number of users in the group has reached the enabled user limit of the group.</td>
+</tr>
+<tr>
+<td>invalid_email_domain</td>
+<td>The Email domain of the user is not allowed by the team.</td>
+</tr>
+<tr>
+<td>duplicated_name</td>
+<td>The updated Email address is already in use by another user.</td>
+</tr>
+<tr>
+<td>upn_not_found</td>
+<td>The user principal name (UPN) of the AD user has not been found on the AD server.</td>
+</tr>
+<tr>
+<td>ldap_verify_failed</td>
+<td>The AD user or AD group has failed the LDAP verification against the AD server.</td>
+</tr>
+<tr>
+<td>sso_profile_disabled</td>
+<td>The SSO profile that the user belongs to has been disabled.</td>
+</tr>
+<tr>
+<td>invalid_format</td>
+<td>The imported CSV file is not in a valid format.</td>
+</tr>
+<tr>
+<td>max_characters_exceeded</td>
+<td>A value in the imported data has exceeded the maximum number of characters.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="group"><strong>Group</strong><a class="headerlink" href="#group" title="Permanent link">&para;</a></h2>
+<h3 id="events-and-triggers_1">Events and triggers<a class="headerlink" href="#events-and-triggers_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Event</strong></th>
+<th><strong>Trigger</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>group_added</td>
+<td>A new group has been added to the team.</td>
+</tr>
+<tr>
+<td>group_added_csv</td>
+<td>A new group has been added to the team by importing a CSV file.</td>
+</tr>
+<tr>
+<td>group_removed</td>
+<td>An existing group has been deleted from the team.</td>
+</tr>
+<tr>
+<td>group_name_updated</td>
+<td>The name of a group has been updated.</td>
+</tr>
+<tr>
+<td>group_connection_pool_enabled</td>
+<td>The connection pool has been enabled for a group.</td>
+</tr>
+<tr>
+<td>group_connection_pool_disabled</td>
+<td>The connection pool has been disabled for a group.</td>
+</tr>
+<tr>
+<td>group_access_permission_enabled</td>
+<td>The access permission setting of a group has been enabled.</td>
+</tr>
+<tr>
+<td>group_access_permission_disabled</td>
+<td>The access permission setting of a group has been disabled.</td>
+</tr>
+<tr>
+<td>group_access_permission_updated</td>
+<td>The access permission of a group has been updated.</td>
+</tr>
+<tr>
+<td>group_access _permission_updated</td>
+<td>The access permission of a group has been updated by importing a CSV file.</td>
+</tr>
+<tr>
+<td>group_accessed_group_added</td>
+<td>A computer group has been added to the access list of a user group.</td>
+</tr>
+<tr>
+<td>group_accessed_group_added_csv</td>
+<td>A computer group has been added to the access list of a user group by importing a CSV file.</td>
+</tr>
+<tr>
+<td>group_accessed_group_removed</td>
+<td>A computer group has been removed from the access list of a user group.</td>
+</tr>
+<tr>
+<td>group_accessed_group_removed_csv</td>
+<td>A computer group has been removed from the access list of a user group by importing a CSV file.</td>
+</tr>
+<tr>
+<td>group_accessed_streamer_added</td>
+<td>A computer has been added to the access list of a user group.</td>
+</tr>
+<tr>
+<td>group_accessed_streamer_added_csv</td>
+<td>A computer has been added to the access list of a user group by importing a CSV file.</td>
+</tr>
+<tr>
+<td>group_accessed_streamer_removed</td>
+<td>A computer has been removed from the access list of a user group.</td>
+</tr>
+<tr>
+<td>group_accessed_streamer_removed_csv</td>
+<td>A computer has been removed from the access list of a user group by importing a CSV file.</td>
+</tr>
+<tr>
+<td>group_granular_remote_control_updated</td>
+<td>The granular control of the remote control for a group has been updated.</td>
+</tr>
+<tr>
+<td>group_granular_file_transfer_download_updated</td>
+<td>The granular control of the file transfer (download) for a group has been updated.</td>
+</tr>
+<tr>
+<td>group_granular_file_transfer_upload_updated</td>
+<td>The granular control of the file transfer (upload) for a group has been updated.</td>
+</tr>
+<tr>
+<td>group_granular_remote_command_updated</td>
+<td>The granular control of the remote command for a group has been updated.</td>
+</tr>
+<tr>
+<td>group_granular_remote_print_updated</td>
+<td>The granular control of the remote print for a group has been updated.</td>
+</tr>
+<tr>
+<td>group_granular_request_permission_updated</td>
+<td>The granular control of the request permission to connect for a group has been updated.</td>
+</tr>
+<tr>
+<td>group_granular_request_permission_rdp_updated</td>
+<td>The granular control of the request permission to connect (RDP session) for a group has been updated.</td>
+</tr>
+<tr>
+<td>group_granular_text_copy_paste_local_remote_updated</td>
+<td>The granular control of the copy and paste (from local to remote) for a group has been updated.</td>
+</tr>
+<tr>
+<td>group_granular_text_copy_paste_remote_local_updated</td>
+<td>The granular control of the copy and paste (from remote to local) for a group has been updated.</td>
+</tr>
+<tr>
+<td>group_granular_watermark_protection_updated</td>
+<td>The granular control of the watermark protection for a group has been updated.</td>
+</tr>
+<tr>
+<td>group_granular_centralized_session_recording_unattended_updated</td>
+<td>The granular control of the centralized session recording (unattended) for a group has been updated.</td>
+</tr>
+<tr>
+<td>group_granular_centralized_session_recording_attended_updated</td>
+<td>The granular control of the centralized session recording (attended) for a group has been updated.</td>
+</tr>
+<tr>
+<td>group_granular_system_tools_updated</td>
+<td>The granular control of the system tools for a group has been updated.</td>
+</tr>
+<tr>
+<td>group_granular_require_2fa_updated</td>
+<td>The granular control of the require 2FA for a group has been updated.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fields_1">Fields<a class="headerlink" href="#fields_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Value</strong></th>
+<th><strong>Explanation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>target</td>
+<td>String</td>
+<td>The name of the target group.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>The updated name of the group.</td>
+</tr>
+<tr>
+<td>csv</td>
+<td>String</td>
+<td>The file name of the imported CSV file.</td>
+</tr>
+<tr>
+<td>access_permission</td>
+<td>String</td>
+<td>The updated access permission of the group.</td>
+</tr>
+<tr>
+<td>group</td>
+<td>String</td>
+<td>The name of the computer group that has been added to or removed from the access list of the user group.</td>
+</tr>
+<tr>
+<td>streamer</td>
+<td>String</td>
+<td>The name of the computer that has been added to or removed from the access list of the user group.</td>
+</tr>
+<tr>
+<td>granular_remote_control</td>
+<td><strong>default</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The updated granular control of the remote control for the group.</td>
+</tr>
+<tr>
+<td>granular_file_transfer_download</td>
+<td><strong>default</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The updated granular control of the file transfer (download) for the group.</td>
+</tr>
+<tr>
+<td>granular_file_transfer_upload</td>
+<td><strong>default</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The updated granular control of the file transfer (upload) for the group.</td>
+</tr>
+<tr>
+<td>granular_remote_command</td>
+<td><strong>default</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The updated granular control of the remote command for the group.</td>
+</tr>
+<tr>
+<td>granular_remote_print</td>
+<td><strong>default</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The updated granular control of the remote print for the group.</td>
+</tr>
+<tr>
+<td>granular_request_permission</td>
+<td><strong>reject connection after request expires (at login screen, reject automatically)</strong> or <strong>reject connection after request expires (at login screen, allow automatically)</strong> or <strong>allow connection after request expires</strong> or <strong>off</strong></td>
+<td>The updated granular control of the request permission to connect for the group.</td>
+</tr>
+<tr>
+<td>granular_request_permission_rdp</td>
+<td><strong>reject connection after request expires (at login screen, reject automatically)</strong> or <strong>reject connection after request expires (at login screen, allow automatically)</strong> or <strong>allow connection after request expires</strong> or <strong>off</strong></td>
+<td>The updated granular control of the request permission to connect (RDP session) for the group.</td>
+</tr>
+<tr>
+<td>granular_text_copy_paste_local_remote</td>
+<td><strong>default</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The updated granular control of the copy and paste (from local to remote) for the group.</td>
+</tr>
+<tr>
+<td>granular_text_copy_paste_remote_local</td>
+<td><strong>default</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The updated granular control of the copy and paste (from remote to local) for the group.</td>
+</tr>
+<tr>
+<td>granular_watermark_protection</td>
+<td><strong>default</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The updated granular control of the watermark protection for the group.</td>
+</tr>
+<tr>
+<td>granular_centralized_session_recording_unattended</td>
+<td><strong>default</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The updated granular control of the centralized session recording (unattended) for the group.</td>
+</tr>
+<tr>
+<td>granular_centralized_session_recording_attended</td>
+<td><strong>default</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The updated granular control of the centralized session recording (attended) for the group.</td>
+</tr>
+<tr>
+<td>granular_system_tools</td>
+<td><strong>default</strong> or <strong>off</strong> or <strong>on</strong></td>
+<td>The updated granular control of the system tools for the group.</td>
+</tr>
+<tr>
+<td>granular_require_2fa</td>
+<td><strong>default</strong> or <strong>off</strong> or <strong>on</strong> or <strong>verification with Authenticator app</strong> or <strong>verification with Email</strong></td>
+<td>The updated granular control of the require 2FA for the group.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="extra_result-values_1">extra_result values<a class="headerlink" href="#extra_result-values_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Value</strong></th>
+<th><strong>Explanation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>group_existed</td>
+<td>The group already exists in the team.</td>
+</tr>
+<tr>
+<td>max_characters_exceeded</td>
+<td>A value in the imported CSV file has exceeded the maximum number of characters.</td>
+</tr>
+<tr>
+<td>missing_required_entry</td>
+<td>A required entry is missing in the imported CSV file.</td>
+</tr>
+<tr>
+<td>invalid_value_of_connection_pool</td>
+<td>The connection pool value in the imported CSV file is invalid.</td>
+</tr>
+<tr>
+<td>invalid_value_of_enabled_user_limit</td>
+<td>The enabled user limit value in the imported CSV file is invalid.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resource"><strong>Resource</strong><a class="headerlink" href="#resource" title="Permanent link">&para;</a></h2>
+<h3 id="events-and-triggers_2">Events and triggers<a class="headerlink" href="#events-and-triggers_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Event</strong></th>
+<th><strong>Trigger</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>resource_added</td>
+<td>A new scheduled access resource has been added.</td>
+</tr>
+<tr>
+<td>resource_updated</td>
+<td>An existing scheduled access resource has been modified and saved.</td>
+</tr>
+<tr>
+<td>resource_removed</td>
+<td>An existing scheduled access resource has been deleted.</td>
+</tr>
+<tr>
+<td>resource_manager_associated</td>
+<td>A user has been assigned as the manager of a resource.</td>
+</tr>
+<tr>
+<td>resource_manager_disassociated</td>
+<td>A user has been removed from the managers of a resource.</td>
+</tr>
+<tr>
+<td>schedule_added</td>
+<td>A new schedule has been added to a resource.</td>
+</tr>
+<tr>
+<td>schedule_updated</td>
+<td>An existing schedule of a resource has been modified and saved.</td>
+</tr>
+<tr>
+<td>schedule_removed</td>
+<td>An existing schedule has been deleted from a resource.</td>
+</tr>
+<tr>
+<td>schedule_manager_associated</td>
+<td>A user has been assigned as the manager of a schedule.</td>
+</tr>
+<tr>
+<td>schedule_manager_disassociated</td>
+<td>A user has been removed from the managers of a schedule.</td>
+</tr>
+<tr>
+<td>streamer_associated</td>
+<td>A computer has been added to a resource.</td>
+</tr>
+<tr>
+<td>streamer_disassociated</td>
+<td>A computer has been removed from a resource.</td>
+</tr>
+<tr>
+<td>streamer_group_associated</td>
+<td>A computer group has been added to a resource.</td>
+</tr>
+<tr>
+<td>streamer_group_disassociated</td>
+<td>A computer group has been removed from a resource.</td>
+</tr>
+<tr>
+<td>user_associated</td>
+<td>A user has been added to a resource.</td>
+</tr>
+<tr>
+<td>user_disassociated</td>
+<td>A user has been removed from a resource.</td>
+</tr>
+<tr>
+<td>user_group_associated</td>
+<td>A user group has been added to a resource.</td>
+</tr>
+<tr>
+<td>user_group_disassociated</td>
+<td>A user group has been removed from a resource.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fields_2">Fields<a class="headerlink" href="#fields_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Value</strong></th>
+<th><strong>Explanation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>target</td>
+<td>String</td>
+<td>The name of the target resource.</td>
+</tr>
+<tr>
+<td>user</td>
+<td>String</td>
+<td>The account of the user that has been associated with or disassociated from the resource or schedule.</td>
+</tr>
+<tr>
+<td>streamer</td>
+<td>String</td>
+<td>The name of the computer that has been associated with or disassociated from the resource.</td>
+</tr>
+<tr>
+<td>group</td>
+<td>String</td>
+<td>The name of the computer group or user group that has been associated with or disassociated from the resource.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="policy"><strong>Policy</strong><a class="headerlink" href="#policy" title="Permanent link">&para;</a></h2>
+<h3 id="events-and-triggers_3">Events and triggers<a class="headerlink" href="#events-and-triggers_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Event</strong></th>
+<th><strong>Trigger</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>preference_policy_added</td>
+<td>A new preference policy has been added.</td>
+</tr>
+<tr>
+<td>preference_policy_updated</td>
+<td>An existing preference policy has been modified and saved.</td>
+</tr>
+<tr>
+<td>preference_policy_removed</td>
+<td>An existing preference policy has been deleted.</td>
+</tr>
+<tr>
+<td>policy_manager_associated</td>
+<td>A user has been assigned as the manager of a preference policy.</td>
+</tr>
+<tr>
+<td>policy_manager_disassociated</td>
+<td>A user has been removed from the managers of a preference policy.</td>
+</tr>
+<tr>
+<td>policy_streamer_added</td>
+<td>A computer has been added to a preference policy.</td>
+</tr>
+<tr>
+<td>policy_streamer_removed</td>
+<td>A computer has been removed from a preference policy.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fields_3">Fields<a class="headerlink" href="#fields_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Value</strong></th>
+<th><strong>Explanation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>target</td>
+<td>String</td>
+<td>The name of the target preference policy.</td>
+</tr>
+<tr>
+<td>user</td>
+<td>String</td>
+<td>The account of the user that has been associated with or disassociated from the policy.</td>
+</tr>
+<tr>
+<td>streamer</td>
+<td>String</td>
+<td>The name of the computer that has been added to or removed from the policy.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-to-many-action"><strong>1-to-Many Action</strong><a class="headerlink" href="#1-to-many-action" title="Permanent link">&para;</a></h2>
+<h3 id="events-and-triggers_4">Events and triggers<a class="headerlink" href="#events-and-triggers_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Event</strong></th>
+<th><strong>Trigger</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1_to_many_action_added</td>
+<td>A new 1-to-Many action has been added.</td>
+</tr>
+<tr>
+<td>1_to_many_action_updated</td>
+<td>An existing 1-to-Many action has been modified and saved.</td>
+</tr>
+<tr>
+<td>1_to_many_action_removed</td>
+<td>An existing 1-to-Many action has been deleted.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fields_4">Fields<a class="headerlink" href="#fields_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Value</strong></th>
+<th><strong>Explanation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>target</td>
+<td>String</td>
+<td>The name of the target 1-to-Many action.</td>
+</tr>
+<tr>
+<td>action_kind</td>
+<td>String</td>
+<td>The action kind of the 1-to-Many action.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-to-many-schedule"><strong>1-to-Many Schedule</strong><a class="headerlink" href="#1-to-many-schedule" title="Permanent link">&para;</a></h2>
+<h3 id="events-and-triggers_5">Events and triggers<a class="headerlink" href="#events-and-triggers_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Event</strong></th>
+<th><strong>Trigger</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1_to_many_schedule_added</td>
+<td>A new 1-to-Many schedule has been added.</td>
+</tr>
+<tr>
+<td>1_to_many_schedule_updated</td>
+<td>An existing 1-to-Many schedule has been modified and saved.</td>
+</tr>
+<tr>
+<td>1_to_many_schedule_removed</td>
+<td>An existing 1-to-Many schedule has been deleted.</td>
+</tr>
+<tr>
+<td>1_to_many_streamer_associated</td>
+<td>A computer has been added to a 1-to-Many schedule.</td>
+</tr>
+<tr>
+<td>1_to_many_streamer_disassociated</td>
+<td>A computer has been removed from a 1-to-Many schedule.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fields_5">Fields<a class="headerlink" href="#fields_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Value</strong></th>
+<th><strong>Explanation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>target</td>
+<td>String</td>
+<td>The name of the target 1-to-Many schedule.</td>
+</tr>
+<tr>
+<td>action_kind</td>
+<td>String</td>
+<td>The action kind of the 1-to-Many schedule.</td>
+</tr>
+<tr>
+<td>streamer</td>
+<td>String</td>
+<td>The name of the computer that has been associated with or disassociated from the schedule.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="deployment"><strong>Deployment</strong><a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
+<h3 id="events-and-triggers_6">Events and triggers<a class="headerlink" href="#events-and-triggers_6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Event</strong></th>
+<th><strong>Trigger</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deploy_package_added</td>
+<td>A new deployment package has been created.</td>
+</tr>
+<tr>
+<td>deploy_package_removed</td>
+<td>An existing deployment package has been deleted.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fields_6">Fields<a class="headerlink" href="#fields_6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Value</strong></th>
+<th><strong>Explanation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>target</td>
+<td>String</td>
+<td>The name of the target deployment package.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="rmm"><strong>RMM</strong><a class="headerlink" href="#rmm" title="Permanent link">&para;</a></h2>
+<h3 id="events-and-triggers_7">Events and triggers<a class="headerlink" href="#events-and-triggers_7" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Event</strong></th>
+<th><strong>Trigger</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rmm_secret_created</td>
+<td>A new RMM API secret (token) has been created for a user.</td>
+</tr>
+<tr>
+<td>rmm_secret_updated</td>
+<td>An existing RMM API secret (token) of a user has been updated.</td>
+</tr>
+<tr>
+<td>rmm_secret_removed</td>
+<td>An existing RMM API secret (token) of a user has been deleted.</td>
+</tr>
+<tr>
+<td>rmm_setting_updated</td>
+<td>An RMM setting has been updated.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fields_7">Fields<a class="headerlink" href="#fields_7" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Value</strong></th>
+<th><strong>Explanation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>target</td>
+<td>String</td>
+<td>The user account that owns the RMM API secret, or the name of the RMM setting key that has been updated.</td>
+</tr>
+<tr>
+<td>api_token</td>
+<td>String</td>
+<td>The RMM API token that has been created, updated, or removed.</td>
+</tr>
+<tr>
+<td>setting_key</td>
+<td>String</td>
+<td>The updated value of the RMM setting.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="oauth"><strong>OAuth</strong><a class="headerlink" href="#oauth" title="Permanent link">&para;</a></h2>
+<h3 id="events-and-triggers_8">Events and triggers<a class="headerlink" href="#events-and-triggers_8" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Event</strong></th>
+<th><strong>Trigger</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>access_token_added</td>
+<td>An Open API access token has been issued.</td>
+</tr>
+<tr>
+<td>access_token_removed</td>
+<td>An Open API access token has been revoked.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fields_8">Fields<a class="headerlink" href="#fields_8" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Value</strong></th>
+<th><strong>Explanation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>target</td>
+<td><strong>access_token</strong></td>
+<td>The target item of the event.</td>
+</tr>
+<tr>
+<td>token</td>
+<td>String</td>
+<td>The Open API access token that has been issued or revoked.</td>
+</tr>
+<tr>
+<td>grant_type</td>
+<td>String</td>
+<td>The OAuth grant type used to issue the access token.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.expand", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>
