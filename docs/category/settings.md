@@ -42,31 +42,6 @@
 | ldap_addr | String | The added/updated LDAP address of the AD server. |
 | name | String | The updated name of the AD server. |
 
-## **SMTP Server**
-
-### Events and triggers
-
-| **Event** | **Trigger** |
-| --- | --- |
-| smtp_server_added | A new SMTP server has been added and saved. |
-| smtp_server_disabled | An SMTP server has been disabled. |
-| smtp_server_enabled | An SMTP server has been enabled. |
-| smtp_server_removed | An existing SMTP server has been deleted. |
-| smtp_server_updated | An existing SMTP server has been modified and saved. |
-| gateway_url_updated | The Splashtop Gateway URL has been modified and saved. |
-
-### Fields
-
-| **Field** | **Value** | **Explanation** |
-| --- | --- | --- |
-| target | String | The target SMTP server address or specific configuration items such as gateway_url, address, email. |
-| old_url | String | The previous Gateway URL. |
-| old_addr | String | The previous SMTP server address. |
-| old_mail | String | The previous sender Email address. |
-| new_url | String | The updated Gateway URL. |
-| new_addr | String | The updated SMTP server address. |
-| new_email | String | The updated sender Email address. |
-
 ## **Unattended Access**
 
 ### Events and triggers
@@ -441,20 +416,3 @@
 | **Field** | **Value** | **Explanation** |
 | --- | --- | --- |
 | target | String | The name of the target Open API application. |
-
-## **Syslog Server**
-
-### Events and triggers
-
-| **Event** | **Trigger** |
-| --- | --- |
-| syslog_server_added | A new syslog server has been added and saved. |
-| syslog_server_updated | An existing syslog server has been modified and saved. |
-| syslog_server_removed | An existing syslog server has been deleted. |
-
-### Fields
-
-| **Field** | **Value** | **Explanation** |
-| --- | --- | --- |
-| target | String | The name of the target syslog server. |
-| FQDN | String | The address (FQDN) of the added syslog server. |
