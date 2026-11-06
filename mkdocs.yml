@@ -24,6 +24,7 @@ nav:
       - Management: category/management.md
       - Service Desk: category/service_desk.md
       - Settings: category/settings.md
+      - System: category/system.md
 
 markdown_extensions:
   - admonition
