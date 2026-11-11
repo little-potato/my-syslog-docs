@@ -35,3 +35,5 @@ plugins:
   - search
 extra_css:
   - assets/css/extra.css
+extra:
+  generator: false
