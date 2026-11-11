@@ -32,7 +32,8 @@ markdown_extensions:
   - toc:
       permalink: true
 plugins:
-  - search
+  - search:
+    separator: '[\s\-,:!=\[\]()"`/;|_]+|\.(?!\d)'
 extra_css:
   - assets/css/extra.css
 extra:
