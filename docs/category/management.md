@@ -458,7 +458,7 @@
 | alert_profile_disabled | An alert profile has been disabled. |
 | alert_profile_computer_assigned | A computer has been assigned to an alert profile. |
 | alert_profile_computer_unassigned | A computer has been unassigned from an alert profile. |
-| alert_profile_computer_autoassigned | A computer has been automatically assigned to an alert profile by a deployment package. The source_agent of this event is **deployment**. |
+| alert_profile_computer_autoassigned | A computer has been automatically assigned to an alert profile by a deployment package. |
 | alert_profile_recipient_user_added | A user has been added to the Email recipient list of an alert profile. |
 | alert_profile_recipient_user_removed | A user has been removed from the Email recipient list of an alert profile. |
 | alert_profile_recipient_group_added | A group has been added to the Email recipient list of an alert profile. |
