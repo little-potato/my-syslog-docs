@@ -13,7 +13,7 @@
 | source_agent | **browser** or **client** or **streamer** or **openapi** or **scim** or **system** | The origin client of the specific event. |
 | source_address | String | IPv4 format. The origin IP address in the specific event. |
 | source_version | String | The origin client version in the specific event. |
-| source_os | String | The origin operating system in the the event. |
+| source_os | String | The origin operating system in the specific event. |
 | source_name | String | The origin client name in the specific event. |
 | target_agent | **browser** or **client** or **streamer** | The target device type in the event. |
 | target_address | String | IPv4 format. The target IP address in the event. |
