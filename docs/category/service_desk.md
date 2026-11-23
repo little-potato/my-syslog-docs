@@ -13,7 +13,7 @@
 | source_agent | **browser** or **client** or **streamer** or **openapi** or **scim** or **system** | The origin client of the specific event. |
 | source_address | String | IPv4 format. The origin IP address in the specific event. |
 | source_version | String | The origin client version in the specific event. |
-| source_os | String | The origin operating system in the the event. |
+| source_os | String | The origin operating system in the specific event. |
 | source_name | String | The origin client name in the specific event. |
 | target_agent | **browser** or **client** or **streamer** | The target device type in the event. |
 | target_address | String | IPv4 format. The target IP address in the event. |
@@ -39,7 +39,7 @@
 | channel_removed | An existing channel has been deleted. |
 | technician_associated | A technician (user) has been associated with a channel. |
 | technician_disassociated | A technician (user) has been disassociated from a channel. |
-| technician_group_assicated | A technician group has been associated with a channel. |
+| technician_group_associated | A technician group has been associated with a channel. |
 | technician_group_disassociated | A technician group has been disassociated from a channel. |
 | technician_support_session_permission_updated | The support session permission of a technician (user) in a channel has been updated. |
 | technician_group_support_session_permission_updated | The support session permission of a technician group in a channel has been updated. |
