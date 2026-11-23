@@ -37,8 +37,8 @@
 | **Field** | **Value** | **Explanation** |
 | --- | --- | --- |
 | target | String | The user account that attempted to log in or log out. |
-| method1 | **ad** or **local** or **sso** | The primary authentication method of the login: an AD account, a local account, or an SSO account. |
-| method2 | **2fa_passcode** or **2fa_recovery_code** | The secondary authentication method of the login when two-factor authentication is in use: a 2FA passcode or a 2FA recovery code. This field is present only when the login has reached the 2FA step. |
+| auth_method | **ad** or **local** or **sso** | The primary authentication method of the login: an AD account, a local account, or an SSO account. |
+| 2fa_method | **2fa_passcode** or **2fa_recovery_code** | The secondary authentication method of the login when two-factor authentication is in use: a 2FA passcode or a 2FA recovery code. This field is present only when the login has reached the 2FA step. |
 | extra_result | String | The reason of a failed login. See the table below. This field is present only when the result is **failure**. |
 
 ### extra_result values
