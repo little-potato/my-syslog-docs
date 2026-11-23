@@ -13,7 +13,7 @@
 | source_agent | **browser** or **client** or **streamer** or **openapi** or **scim** or **system** | The origin client of the specific event. |
 | source_address | String | IPv4 format. The origin IP address in the specific event. |
 | source_version | String | The origin client version in the specific event. |
-| source_os | String | The origin operating system in the the event. |
+| source_os | String | The origin operating system in the specific event. |
 | source_name | String | The origin client name in the specific event. |
 | target_agent | **browser** or **client** or **streamer** | The target device type in the event. |
 | target_address | String | IPv4 format. The target IP address in the event. |
@@ -159,7 +159,7 @@
 | grant_granular_file_transfer_upload | **on** or **off** | The admin has been granted or not granted the permission to configure file transfer (upload). |
 | grant_granular_remote_command | **on** or **off** | The admin has been granted or not granted the permission to configure remote command. |
 | grant_granular_remote_print | **on** or **off** | The admin has been granted or not granted the permission to configure remote print. |
-| grant_granular_request_permission | **on** or **off** | The admin has been granted or not granted the permission to configure request-to-connect permission . |
+| grant_granular_request_permission | **on** or **off** | The admin has been granted or not granted the permission to configure request-to-connect permission. |
 | grant_granular_text_copy_paste_local_remote | **on** or **off** | The admin has been granted or not granted the permission to configure copy and paste (from local to remote). |
 | grant_granular_text_copy_paste_remote_local | **on** or **off** | The admin has been granted or not granted the permission to configure copy and paste (from remote to local). |
 | grant_granular_watermark_protection | **on** or **off** | The admin has been granted or not granted the permission to configure watermark protection. |
