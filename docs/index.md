@@ -46,7 +46,7 @@ In addition to access logs from web console, Splashtop log events can also be 
 | **source_address** | String | The origin IP address in the specific event. |
 | **source_agent** | String | The origin client of the specific event. |
 | **source_version** | String | The origin client version in the specific event. |
-| **source_os** | String | The origin operating system in the the event. |
+| **source_os** | String | The origin operating system in the specific event. |
 | **source_name** | String | The origin client name in the specific event. |
 | **target_address** | String | The target IP address in the event. |
 | **target_version** | String | The target agent version in the event. |
@@ -70,7 +70,7 @@ Splashtop syslog message examples following standard RFC 5424 format are showing
 **Example 1.**
 
 ```
-05-13-2022 14:44:54 Local0.Notice 192.168.70.75 1 2022-05-13T14:44:54+05:00 Test-Vistro onpremise.exe 3292 SOP - timestamp=2022-05-13T09:44:54Z;team_id=1;event_id=team_file_transfer_enabled;account=john.doe@example.com;agent=browser;source_address=192.168.67.22;source_name=IE;source_version=110.0.1587;source_os=Windows;category=management;kind=team_mgmt;action=update;result=success;target=remote_support_setting;desc:file_transfer=enabled;
+05-13-2022 14:44:54 Local0.Notice 192.168.70.75 1 2022-05-13T14:44:54+05:00 Test-Vistro onpremise.exe 3292 SOP - timestamp=2022-05-13T09:44:54Z;team_id=1;event=team_file_transfer_enabled;account=john.doe@example.com;source_agent=browser;source_address=192.168.67.22;source_name=IE;source_version=110.0.1587;source_os=Windows;category=management;kind=team_mgmt;action=update;result=success;target=remote_support_setting;desc:file_transfer=enabled;
 
 ```
 
