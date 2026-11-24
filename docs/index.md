@@ -11,15 +11,15 @@ In addition to access logs from web console, Splashtop log events can also be 
 4. Syslog Settings
 
 <table>
-  <tr><th align="left">Name</th><td>Syslog host name in Splashtop Gateway.</td></tr>
-  <tr><th align="left">Syslog Server address</th><td>Enter the hostname or IP address of the syslog server receiving log messages.</td></tr>
-  <tr><th align="left">Port</th><td>Syslog over UDP defaults to use port 514. The defaults can be changed.</td></tr>
-  <tr><th align="left">Syslog Protocol</th><td>Supports UDP or TCP.</td></tr>
-  <tr><th align="left">Message Format</th><td>Supports RFC 5424 or RFC 3164 (BSD).</td></tr>
-  <tr><th align="left">Facility</th><td>Choose proper facility from local0 - local7.</td></tr>
-  <tr><th align="left">Severity</th><td>Choose the proper Syslog severity.</td></tr>
-  <tr><th align="left">Status</th><td>Once enabled, Splashtop Gateway starts to send persistent syslog messages to your Syslog Server.</td></tr>
-  <tr><th align="left">Test Message</th><td>Send a message to your Syslog Server to test the above settings.</td></tr>
+  <tr><th align="left">Name</th><td>Required display label for this syslog destination in the Gateway console.</td></tr>
+  <tr><th align="left">Syslog Server address</th><td>Required hostname or IP address of the syslog server that will receive Gateway log messages.</td></tr>
+  <tr><th align="left">Port</th><td>Destination port on the syslog server, default 514, range 1–65535.</td></tr>
+  <tr><th align="left">Syslog Protocol</th><td>Transport used for delivery — UDP (default, lowest overhead, no delivery confirmation) or TCP (retransmits lost messages, preferred for audit trails).</td></tr>
+  <tr><th align="left">Message Format</th><td>Message structure — RFC 5424 (default, recommended) or RFC 3164 BSD (legacy, for collectors that cannot parse RFC 5424).</td></tr>
+  <tr><th align="left">Facility</th><td>Syslog facility for Gateway log messages, local0 by default; select a facility no other log source is using so Gateway traffic can be routed separately on your syslog server.</td></tr>
+  <tr><th align="left">Severity</th><td>Syslog severity carried by Gateway log messages, Notice by default; select the level that matches how your log management system classifies remote access audit events.</td></tr>
+  <tr><th align="left">Status</th><td>Enables forwarding to this destination, enabled by default.</td></tr>
+  <tr><th align="left">Test Message</th><td>Sends a test message using the settings shown, without saving the configuration, to confirm the syslog server is reachable; enter custom text or leave blank to use the default.</td></tr>
 </table>
 
 ### 2. Syslog Message Format
