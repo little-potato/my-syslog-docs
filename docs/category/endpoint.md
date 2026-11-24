@@ -83,7 +83,7 @@
 | old_group | String | The computer group that the computer belonged to previously. |
 | new_group | String | The computer group that the computer has been moved to. |
 
-## **SOS**
+## **Service Desk**
 
 ### Events and triggers
 
