@@ -297,10 +297,10 @@
 
 | **Field** | **Value** | **Explanation** |
 | --- | --- | --- |
-| target | String | The name of the target resource. |
+| target | String | The name of the target resource or schedule. |
 | user | String | The account of the user that has been associated with or disassociated from the resource or schedule. |
 | streamer | String | The name of the computer that has been associated with or disassociated from the resource. |
-| group | String | The name of the computer group or user group that has been associated with or disassociated from the resource. |
+| group | String | The name of the computer group or user group that has been associated with or disassociated from the resource/schedule. |
 
 ## **Policy**
 
