@@ -7,7 +7,7 @@
 | timestamp | ISO 8601 timestamp format | The date and time the event has been triggered. |
 | team_id | Integer | Splashtop Team ID. |
 | category | String | Splashtop events category. |
-| kind | String | Splashtop events kind under specific category. For session events the kind is the same as the session type of the event (except srep_port_session, whose kind is **srep_port_forwarding_session**). |
+| kind | String | Splashtop events kind under the specific category. |
 | action | String | Not applicable to session events. |
 | account | String | The user account that initiated the specific event. |
 | source_agent | **browser** or **client** or **streamer** or **openapi** or **scim** or **system** | The origin client of the specific event. |
@@ -40,13 +40,13 @@
 | srep_port_session | A port forwarding session to a computer (port forwarding computer) has ended. |
 | sos_remote_session | An SOS (attended) remote control session to an end-user device has ended. |
 | sos_file_transfer | A file has been transferred between the On-Prem app and an end-user device in an SOS session. |
-| sos_system_tool_session | An SOS (attended) system tools session to an end-user device has ended. |
+| sos_system_tool_session | A Service Desk (attended) system tools session to an end-user device has ended. |
 
 ## **Fields**
 
 | **Field** | **Value** | **Explanation** |
 | --- | --- | --- |
-| target | String | The user account of the RMM session. Present only in the rmm_session event; for the other session events the target computer is recorded in the target_* public fields. |
+| target | String | The user account of the RMM session. Present only in the rmm_session event. |
 | duration | String | The duration of the session. |
 | type | **lan** or **wan** or **rdp_lan** or **rdp_wan** or **vnc_lan** or **vnc_wan** | The connection type of the session: whether the session was established over the local network (lan) or over the Internet via the Gateway (wan), and whether the session was a native streamer session, an RDP session (rdp_*), or a VNC session (vnc_*). The rdp_* and vnc_* values apply to remote_session only; the rdp_* values also apply to file_transfer. |
 | file_name | String | The name of the file that has been transferred. |
