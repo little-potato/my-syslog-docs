@@ -138,11 +138,11 @@
 | display_name | String | The updated display name of the user. |
 | 2fa_method | **Authenticator app** or **Email** | The two-step verification (2FA) method that has been enabled for the user. |
 | device_name | String | The name of the device that has been added to or removed from the trusted device list. |
-| group | String | The name of the group: the group that the group manager role has been granted or withdrawn for, or the computer group that has been added to or removed from the access list of the user. |
+| group | String | The name of the group. |
 | old_group | String | The group that the user belonged to previously. |
 | new_group | String | The group that the user has been moved to. |
 | access_permission | String | The updated access permission of the user. |
-| streamer | String | The name of the computer that has been added to or removed from the access list of the user. |
+| streamer | String | The name of the computer. |
 | granular_remote_control | **default** or **follow group** or **off** or **on** | The updated granular control of the remote control for the user. |
 | granular_file_transfer_download | **default** or **follow group** or **off** or **on** | The updated granular control of the file transfer (download) for the user. |
 | granular_file_transfer_upload | **default** or **follow group** or **off** or **on** | The updated granular control of the file transfer (upload) for the user. |
@@ -240,8 +240,8 @@
 | name | String | The updated name of the group. |
 | csv | String | The file name of the imported CSV file. |
 | access_permission | String | The updated access permission of the group. |
-| group | String | The name of the computer group that has been added to or removed from the access list of the user group. |
-| streamer | String | The name of the computer that has been added to or removed from the access list of the user group. |
+| group | String | The name of the computer group. |
+| streamer | String | The name of the computer. |
 | granular_remote_control | **default** or **off** or **on** | The updated granular control of the remote control for the group. |
 | granular_file_transfer_download | **default** or **off** or **on** | The updated granular control of the file transfer (download) for the group. |
 | granular_file_transfer_upload | **default** or **off** or **on** | The updated granular control of the file transfer (upload) for the group. |
