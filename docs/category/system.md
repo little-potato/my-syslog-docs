@@ -29,7 +29,7 @@
 
 | **Event** | **Trigger** |
 | --- | --- |
-| gateway_url_updated | The Splashtop Gateway URL has been modified and saved. |
+| gateway_url_updated | The Splashtop Gateway address (URL) has been modified and saved. |
 | port_updated | The Splashtop Gateway port has been modified and saved. |
 
 ### Fields
@@ -99,8 +99,8 @@
 | web_ip_restriction_ip_updated | The allowed IP ranges for web console access have been updated. |
 | web_ip_restriction_access_deny_updated | The response displayed when the web console is accessed from an IP address without permission has been updated. |
 | web_ip_restriction_allow_access_download_updated | Allowing access to the support session app download pages (SOS, Service Desk, PIN Code) from all IP ranges has been enabled or disabled. |
-| client_ip_restriction_enabled | The IP restriction for On-Prem app (Business app and streamer) access has been enabled. |
-| client_ip_restriction_disabled | The IP restriction for On-Prem app (Business app and streamer) access has been disabled. |
+| client_ip_restriction_enabled | The IP restriction for On-Prem app access has been enabled. |
+| client_ip_restriction_disabled | The IP restriction for On-Prem app access has been disabled. |
 | client_ip_restriction_ip_updated | The allowed IP ranges for On-Prem app access have been updated. |
 | openapi_ip_restriction_enabled | The IP restriction for Open API access has been enabled. |
 | openapi_ip_restriction_disabled | The IP restriction for Open API access has been disabled. |
