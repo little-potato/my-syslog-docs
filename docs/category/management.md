@@ -302,7 +302,7 @@
 | streamer | String | The name of the computer that has been associated with or disassociated from the resource. |
 | group | String | The name of the computer group or user group that has been associated with or disassociated from the resource or schedule. |
 
-## **Policy**
+## **Preference Policy**
 
 ### Events and triggers
 
@@ -435,7 +435,7 @@
 
 | **Field** | **Value** | **Explanation** |
 | --- | --- | --- |
-| target | String | The name of the target endpoint policy; for the endpoint_policy_override_* events, the name of the target computer (or **\<computer name\>’s Endpoint Policy overrides**). |
+| target | String | The name of the target endpoint policy; for the endpoint_policy_override_* events, the name of the target computer. |
 | policy_platform | **Windows** or **Mac** or **Android** | The platform of the endpoint policy. |
 | sub_policy | String | The name of the category (sub-policy) of the endpoint policy that has been changed. |
 | \<config_item\> | (status, value) | The configuration item that has been changed, with the field name as the property name and the updated status and value as the value. |
