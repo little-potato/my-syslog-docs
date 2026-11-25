@@ -207,7 +207,7 @@
 | group_access_permission_enabled | The access permission setting of a group has been enabled. |
 | group_access_permission_disabled | The access permission setting of a group has been disabled. |
 | group_access_permission_updated | The access permission of a group has been updated. |
-| group_access _permission_updated | The access permission of a group has been updated by importing a CSV file. |
+| group_access_permission_updated | The access permission of a group has been updated by importing a CSV file. |
 | group_accessed_group_added | A computer group has been added to the access list of a user group. |
 | group_accessed_group_added_csv | A computer group has been added to the access list of a user group by importing a CSV file. |
 | group_accessed_group_removed | A computer group has been removed from the access list of a user group. |
@@ -297,10 +297,10 @@
 
 | **Field** | **Value** | **Explanation** |
 | --- | --- | --- |
-| target | String | The name of the target resource. |
+| target | String | The name of the target resource or schedule. |
 | user | String | The account of the user that has been associated with or disassociated from the resource or schedule. |
 | streamer | String | The name of the computer that has been associated with or disassociated from the resource. |
-| group | String | The name of the computer group or user group that has been associated with or disassociated from the resource. |
+| group | String | The name of the computer group or user group that has been associated with or disassociated from the resource or schedule. |
 
 ## **Policy**
 
@@ -311,8 +311,8 @@
 | preference_policy_added | A new preference policy has been added. |
 | preference_policy_updated | An existing preference policy has been modified and saved. |
 | preference_policy_removed | An existing preference policy has been deleted. |
-| policy_manager_associated | A user has been assigned as the manager of a preference policy. |
-| policy_manager_disassociated | A user has been removed from the managers of a preference policy. |
+| policy_manager_associated | A group manager has been assigned as the manager of a preference policy. |
+| policy_manager_disassociated | A group manager has been removed from the managers of a preference policy. |
 | policy_streamer_added | A computer has been added to a preference policy. |
 | policy_streamer_removed | A computer has been removed from a preference policy. |
 
