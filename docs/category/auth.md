@@ -59,4 +59,4 @@
 | web_access_disabled | The user account is not allowed to access the web console. |
 | mac_address_restriction | The login from the On-Prem app has been rejected by the MAC address restriction. |
 | out_of_seat | The login has been rejected because the team has no available license seat for the AD account. |
-| user_count_limit_exceeded | The login has been rejected because the number of users in the team has reached the user count limit for the AD account. |
+| user_count_limit_exceeded | The login of an AD group member has been rejected because the number of users in the team has reached the max user count limit. |
