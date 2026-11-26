@@ -294,6 +294,7 @@
 | pwd_exp_duration | String | The updated password expiration duration. |
 | lockout_threshold | String | The updated number of failed login attempts before the account is locked out. |
 | lockout_duration | String | The updated duration that the account stays locked out. |
+| unlock_type | **0** or **1** | The updated method of unlocking a locked-out account. **0**: the account is unlocked automatically when the lockout duration expires. **1**: the account can only be unlocked by an admin. |
 | idle_timeout | String | The updated idle timeout for the web console, in hours or minutes according to the event. |
 | client_logout_ttl | String | The updated idle timeout for logging out users from the On-Prem app, in hours or minutes according to the event. |
 | device_auth_duration | String | The updated validity duration of the device authentication for the On-Prem app. |
