@@ -7,7 +7,7 @@
 | timestamp | ISO 8601 timestamp format | The date and time the event has been triggered. |
 | team_id | Integer | Splashtop Team ID. |
 | category | String | Splashtop events category. |
-| kind | String | Splashtop events kind under specific category. |
+| kind | String | Splashtop events kind under the specific category. |
 | action | **delete** | The event operating action type in the event. |
 | account | String | The user account that initiated the specific event. |
 | source_agent | **browser** or **client** or **streamer** or **openapi** or **scim** or **system** | The origin client of the specific event. |
@@ -18,7 +18,7 @@
 | target_agent | **browser** or **client** or **streamer** | The target device type in the event. |
 | target_address | String | IPv4 format. The target IP address in the event. |
 | target_version | String | The target agent version in the event. |
-| target_os | String | The target agent platform in the event |
+| target_os | String | The target agent platform in the event. |
 | target_name | String | The target device name in the event. |
 | target_account | String | The target user account in the event. |
 | result | String | Success or failure of the event. |
