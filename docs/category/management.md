@@ -207,7 +207,7 @@
 | group_access_permission_enabled | The access permission setting of a group has been enabled. |
 | group_access_permission_disabled | The access permission setting of a group has been disabled. |
 | group_access_permission_updated | The access permission of a group has been updated. |
-| group_access_permission_updated | The access permission of a group has been updated by importing a CSV file. |
+| group_access_permission_updated_csv | The access permission of a group has been updated by importing a CSV file. |
 | group_accessed_group_added | A computer group has been added to the access list of a user group. |
 | group_accessed_group_added_csv | A computer group has been added to the access list of a user group by importing a CSV file. |
 | group_accessed_group_removed | A computer group has been removed from the access list of a user group. |
