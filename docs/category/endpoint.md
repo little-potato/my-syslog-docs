@@ -7,7 +7,7 @@
 | timestamp | ISO 8601 timestamp format | The date and time the event has been triggered. |
 | team_id | Integer | Splashtop Team ID. |
 | category | String | Splashtop events category. |
-| kind | String | Splashtop events kind under specific category. |
+| kind | String | Splashtop events kind under the specific category. |
 | action | **authenticate** or **deploy** or **update** or **delete** or **disconnect** | The event operating action type in the event. |
 | account | String | The user account that initiated the specific event. |
 | source_agent | **browser** or **client** or **streamer** or **openapi** or **scim** or **system** | The origin client of the specific event. |
@@ -68,7 +68,7 @@
 | streamer_note_updated | The note of a computer has been updated. |
 | streamer_group_assigned | A computer has been moved to another computer group. |
 | streamer_disconnected | All remote sessions of a computer have been disconnected. |
-| request_wakeup_computer | A Wake-up request has been sent to a computer. |
+| request_wakeup_computer | A wake-up request has been sent to a computer. |
 | request_reboot_computer | A request to reboot a computer has been sent. |
 | request_safe_mode_reboot_computer | A request to reboot a computer in safe mode has been sent. |
 | request_restart_streamer | A request to restart the streamer service of a computer has been sent. |
