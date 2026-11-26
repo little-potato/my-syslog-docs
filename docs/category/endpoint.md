@@ -18,7 +18,7 @@
 | target_agent | **browser** or **client** or **streamer** | The target device type in the event. |
 | target_address | String | IPv4 format. The target IP address in the event. |
 | target_version | String | The target agent version in the event. |
-| target_os | String | The target agent platform in the event |
+| target_os | String | The target agent platform in the event. |
 | target_name | String | The target device name in the event. |
 | target_account | String | The target user account in the event. |
 | result | String | Success or failure of the event. |
