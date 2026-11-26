@@ -48,7 +48,7 @@
 | --- | --- | --- |
 | target | String | The user account of the RMM session. Present only in the rmm_session event. |
 | duration | String | The duration of the session. |
-| type | **lan** or **wan** or **rdp_lan** or **rdp_wan** or **vnc_lan** or **vnc_wan** | The connection type of the session: whether the session was established over the local network (lan) or over the Internet via the Gateway (wan), and whether the session was a native streamer session, an RDP session (rdp_*), or a VNC session (vnc_*). The rdp_* and vnc_* values apply to remote_session only; the rdp_* values also apply to file_transfer. |
+| type | **lan** or **wan** or **rdp_lan** or **rdp_wan** or **vnc_lan** or **vnc_wan** or **sftp_lan** or **sftp_wan** | The connection type of the session: whether the session was established over the local network (lan) or over the Internet via the Gateway (wan), and whether the session was a native streamer session, an RDP session (rdp_*), a VNC session (vnc_*), or an SFTP file transfer (sftp_*). |
 | file_name | String | The name of the file that has been transferred. |
 | cmd | String | The command that has been executed in the remote command session. |
 | job_title | String | The title of the print job that has been printed in the remote print session. |
