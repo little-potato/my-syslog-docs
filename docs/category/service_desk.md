@@ -71,10 +71,10 @@
 | support_session_released | A technician has released a support session back to the channel. |
 | support_session_closed | A support session has been closed. |
 | support_session_deleted | A support session has been deleted. |
-| support_session_transfered | A support session has been transferred to another technician. |
+| support_session_transferred | A support session has been transferred to another technician. |
 | support_session_expired | A support session has expired and been closed automatically by the system. |
 | technician_invited | A technician has been invited to assist in a support session. |
-| technician_assgined | A technician has been assigned to a support session. |
+| technician_assigned | A technician has been assigned to a support session. |
 | comment_updated | The comment of a support session has been updated. |
 
 ### Fields
