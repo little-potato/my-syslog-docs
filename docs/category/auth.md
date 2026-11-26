@@ -7,7 +7,7 @@
 | timestamp | ISO 8601 timestamp format | The date and time the event has been triggered. |
 | team_id | Integer | Splashtop Team ID. |
 | category | String | Splashtop events category. |
-| kind | String | Splashtop events kind under specific category. |
+| kind | String | Splashtop events kind under the specific category. |
 | action | **login** or **logout** | The event operating action type in the event. |
 | account | String | The user account that initiated the specific event. |
 | source_agent | **browser** or **client** or **streamer** or **openapi** or **scim** or **system** | The origin client of the specific event. |
