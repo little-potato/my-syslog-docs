@@ -74,7 +74,7 @@
 | team_granular_watermark_protection_member_updated | The team’s granular control of the watermark protection for members has been updated. |
 | team_granular_centralized_session_recording_unattended_admin_updated | The team’s granular control of the centralized session recording (unattended) for admins has been updated. |
 | team_granular_centralized_session_recording_unattended_member_updated | The team’s granular control of the centralized session recording (unattended) for members has been updated. |
-| team_grant_granular_rcentralized_session_recording_unattended_updated | The admin-configurable value of the centralized session recording (unattended) has been updated for the team. |
+| team_grant_granular_centralized_session_recording_unattended_updated | The admin-configurable value of the centralized session recording (unattended) has been updated for the team. |
 | team_granular_system_tools_admin_updated | The team’s granular control of the system tools (unattended) for admins has been updated. |
 | team_granular_system_tools_member_updated | The team’s granular control of the system tools (unattended) for members has been updated. |
 | team_grant_granular_system_tools_updated | The admin-configurable value of the system tools (unattended) has been updated for the team. |
@@ -179,7 +179,7 @@
 | granular_request_permission_member | String | The team’s updated granular control of the request permission to connect for members. |
 | granular_centralized_session_recording_unattended_admin | **on** or **off** | The team’s granular control of the centralized session recording (unattended) for admins has been turned on or off. |
 | granular_centralized_session_recording_unattended_member | **on** or **off** | The team’s granular control of the centralized session recording (unattended) for members has been turned on or off. |
-| grant_granular_rcentralized_session_recording_unattended | **on** or **off** | The admin has been granted or not granted the permission to configure centralized session recording (unattended). |
+| grant_granular_centralized_session_recording_unattended | **on** or **off** | The admin has been granted or not granted the permission to configure centralized session recording (unattended). |
 | granular_system_tools_admin | **on** or **off** | The team’s granular control of the system tools (unattended) for admins has been turned on or off. |
 | granular_system_tools_member | **on** or **off** | The team’s granular control of the system tools (unattended) for members has been turned on or off. |
 | grant_granular_system_tools | **on** or **off** | The admin has been granted or not granted the permission to configure system tools (unattended). |
@@ -359,7 +359,7 @@
 | session_indicator_type | **Banner** or **None** | The indicator type for attended access sessions. |
 | granular_centralized_session_recording_attended_admin | **on** or **off** | The team’s granular control of the centralized session recording (attended) for admins has been turned on or off. |
 | granular_centralized_session_recording_attended_member | **on** or **off** | The team’s granular control of the centralized session recording (attended) for members has been turned on or off. |
-| grant_granular_rcentralized_session_recording_attended | **on** or **off** | The admin has been granted or not granted the permission to configure centralized session recording (attended). |
+| grant_granular_centralized_session_recording_attended | **on** or **off** | The admin has been granted or not granted the permission to configure centralized session recording (attended). |
 | name_type | **account name** or **display name** | The name type displayed in the Service Desk chat transcripts. |
 
 ## **Endpoint Management**
