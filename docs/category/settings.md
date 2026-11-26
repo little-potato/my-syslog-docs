@@ -292,7 +292,7 @@
 | --- | --- | --- |
 | pwd_min_len | String | The updated minimum password length. |
 | pwd_exp_duration | String | The updated password expiration duration. |
-| lockout_threhold | String | The updated number of failed login attempts before the account is locked out. |
+| lockout_threshold | String | The updated number of failed login attempts before the account is locked out. |
 | lockout_duration | String | The updated duration that the account stays locked out. |
 | idle_timeout | String | The updated idle timeout for the web console, in hours or minutes according to the event. |
 | client_logout_ttl | String | The updated idle timeout for logging out users from the On-Prem app, in hours or minutes according to the event. |
